@@ -1,0 +1,43 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root{
+    --size: 250px;
+    --gap: 10px; 
+    --scale: 1.5;
+}
+
+.container{
+    display: grid;
+    width: calc(3 * var(--size) + 2 * var(--gap)); 
+    grid-template-columns: repeat(3, auto);
+    aspect-ratio: 1;
+    grid-gap: var(--gap); 
+    margin:0 auto;  
+    
+
+}
+
+.container>img{
+    width: 0;
+    height: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: .4s;
+    filter: grayscale(.8);
+    
+
+}
+.container>img:hover {
+    filter: grayscale(0);
+    width: calc(var(--size) * var(--scale));
+    height: calc(var(--size) * var(--scale));
+    
+}
+
+
